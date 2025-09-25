@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Home - Task Manager{% endblock %}
+{% block content %}
     <h1>Hello, {{ username }}!</h1>
     <h2>Your Tasks:</h2>
     <ul>
         {% for task in tasks %}
-        <li>{{ task }}</li>
+        <li>
+            {{ task }}
+            <form action="/delete-task" method="post" style="display:inline;">
+                <input type="hidden" name="task_name" value="{{ task }}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
         {% endfor %}
     </ul>
-
     <form action="/add-task" method="post">
         <input type="text" name="task_name" placeholder="New Task" required>
         <button type="submit">Add Task</button>
     </form>
-    
-</body>
-</html>
+{% endblock %}
