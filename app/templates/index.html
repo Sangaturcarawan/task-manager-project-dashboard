@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+    <h2>Your Tasks:</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="/add-task" method="post">
+        <input type="text" name="task_name" placeholder="New Task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    
+</body>
+</html>
