@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
 
-BASE_DIR = "/home/Sangnegarawan/task-manager-project-dashboard"
+# BASE_DIR = "/home/Sangnegarawan/task-manager-project-dashboard"
 app = FastAPI()
 
 tasks = [
@@ -13,11 +13,11 @@ tasks = [
     "Call the office"
     ]
 
-app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "app/static")), name="static")
-templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "app/templates"))
+# app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "app/static")), name="static")
+# templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "app/templates"))
 
-# app.mount("/static", StaticFiles(directory="app/static"), name="static")
-# templates = Jinja2Templates(directory="app/templates")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
