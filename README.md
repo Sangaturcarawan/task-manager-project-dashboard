@@ -15,6 +15,7 @@ A simple **task manager web application** built with **FastAPI** and **Jinja2 te
 > **Note:** Version 1 does **not** include user authentication or login functionality yet.
 
 ---
+
 ## Features
 
 - Display a list of tasks
@@ -91,6 +92,16 @@ http://127.0.0.1:8000/
 
 ## Usage
 
-- View, add, and delete tasks from the homepage
+- View tasks:
+  ![List of tasks](images/view-tasks.png)
+- Add a task:
+  ![Add a task](images/add-tasks.png)
+- Added task:
+  ![Added task](images/added-tasks.png)
+- Add another task:
+  ![Added another task](images/added-tasks2.png)
+- Delete a task:
+  ![Deleted a task](images/deleted-task.png)
+
 - Styling is minimal via styles.css
-- script.js, login.html & dashboard.html is empty for future enhancements
+- script.js, login.html & dashboard.html are empty for future enhancements
